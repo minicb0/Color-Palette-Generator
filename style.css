@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+    background-color: rgb(22, 22, 22);
+    font-family: Arial, Helvetica, sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100%;
+    font-size: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+h1 {
+    text-align: center;
+    margin: 10px;
+}
+
+#head {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contentWrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.topContainer, .bottomContainer {
+    width: 90%;
+    border: 2px solid rgb(145, 145, 145);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    max-height: 600px;
+}
+
+.bottomContainer {
+    text-align: center;
+    overflow-y: auto;
+}
+
+#generate {
+    background-color: #1d44f5;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    width: 100%;
+    font-size: 18px;
+}
+
+#generate:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+#palette {
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid rgb(145, 145, 145);
+    border-radius: 5px;
+    overflow-y: auto;
+    max-height: 455px;
+}
+
+.color i, .colorPalette i {
+    visibility: hidden;
+}
+
+.color input, .colorPalette input {
+    visibility: hidden;
+}
+
+.color:hover i, .colorPalette:hover i {
+    visibility: visible;
+}
+
+.color:hover input, .colorPalette:hover input {
+    visibility: visible;
+}
+
+.color {
+    padding: 25px;
+    margin: 0px;
+    border-radius: 2px;
+}
+
+.colorPalette {
+    padding: 15px;
+    margin: 0px;
+    border-radius: 2px;
+    text-align: left;
+}
+
+.color input, .colorPalette input {
+    float: right;
+    margin: 5px;
+}
+
+.color i, .colorPalette i {
+    /* color: white; */
+    float: right;
+    margin: 5px;
+}
+
+.color i:hover, .colorPalette i:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.addColors {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding: 5px;
+    border: 2px solid rgb(145, 145, 145);
+    border-radius: 5px;
+}
+
+.addColors button {
+    background-color: #1d44f5;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    font-size: 18px;
+}
+
+.addColors button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.addColors i {
+    color: #1d44f5;
+    margin-left: 5px;
+}
+
+.addColors i:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.palette {
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid rgb(145, 145, 145);
+    border-radius: 5px;
+}
+
+/* scroll bar */
+::-webkit-scrollbar {
+    width: 17px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #b8b8bb;
+    border-radius: 50px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #5a5a5a;
+}
+
+@media (max-width: 1000px) {
+    .contentWrapper {
+        display: block;
+    }
+    .topContainer, .bottomContainer {
+        margin: auto;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 520px) {
+    body {
+        font-size: 16px;
+    }
+    #generate, .addColors button {
+        font-size: 16px;
+    }
+    .addColors {
+        display: block;
+    }
+    .addColors div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+    .addColors div input {
+        margin-left: 5px;
+    }
+}
