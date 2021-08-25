@@ -6,6 +6,7 @@ const addColor = document.getElementById("addColor");
 const saveBtn = document.getElementById("saveBtn");
 const color = document.getElementsByClassName("color");
 const paletteSaved = document.getElementById("paletteSaved");
+const error = document.getElementById("error");
 
 // to generate random colors
 const hexCharacters = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"];
@@ -97,6 +98,7 @@ function addingEventDel(i) {
 }
 
 addColor.addEventListener('click', () => {
+    error.classList.add("hide")
     paletteDiv(addColor.parentElement.childNodes[1].value);
     // console.log(editIcon[editIcon.length - 1])
     addingEventEdit(editIcon.length - 1)
@@ -108,6 +110,9 @@ saveBtn.addEventListener('click', () => {
     for (let i = 0; i < color.length; i++) {
         // console.log(color[i].firstElementChild.innerHTML)
         colorsLocal.push(color[i].firstElementChild.innerHTML)
+    }
+    if (colorsLocal.length == 0) {
+        return error.classList.remove("hide")
     }
     paletteLocal.push(colorsLocal)
     localStorage.setItem("palette", JSON.stringify(paletteLocal))
@@ -140,6 +145,9 @@ function loadLocalStorage() {
             element.appendChild(del)
             del.addEventListener('click', () => {
                 paletteLocal[i].splice(j, 1)
+                if (paletteLocal[i].length == 0) {
+                    paletteLocal.splice(i, 1)
+                }
                 localStorage.setItem("palette", JSON.stringify(paletteLocal))
                 loadLocalStorage();
             })

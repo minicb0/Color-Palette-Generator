@@ -27,6 +27,10 @@ h1 {
     margin-bottom: 10px;
 }
 
+#error {
+    color: red;
+}
+
 .contentWrapper {
     display: flex;
     justify-content: space-around;
@@ -153,7 +157,7 @@ h1 {
 }
 
 .hide {
-    display: none;
+    display: none !important;
 }
 
 .palette {
@@ -207,5 +211,8 @@ h1 {
     }
     .addColors div input {
         margin-left: 5px;
+    }
+    #palette {
+        max-height: 430px;
     }
 }
